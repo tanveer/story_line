@@ -9,13 +9,11 @@
   </head>
 
   <body>
-    <div class="w3-bar w3-black w3-padding-16">
-      <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
-    </div>
+    <%= render 'shared/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
