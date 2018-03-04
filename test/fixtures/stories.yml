@@ -3,7 +3,9 @@
 one:
   title: MyString
   story: MyText
+  user: one
 
 two:
   title: MyString
   story: MyText
+  user: two

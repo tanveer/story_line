@@ -1,0 +1,7 @@
+.container
+  %h1 Stories
+  - @stories.each do |story|
+    %ul
+      %li= link_to story.title, story_path(story)
+      %li= story.story
+      %li= story.user.email

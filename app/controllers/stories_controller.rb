@@ -2,15 +2,21 @@ class StoriesController < ApplicationController
 
   before_action :set_story, only: [:edit, :update, :show, :destroy]
 
+
+  def index
+    @story = Story.all
+  end
+
   def new
     @story = Story.new
   end
 
   def create
     @story = Story.new(story_params)
+    @story.user = current_user
     if @story.save
       flash[:success] = "Your story is ceated successfuly"
-      redirect_to root_path
+      redirect_to story_path(@story)
     else
       render 'new'
     end
@@ -23,7 +29,6 @@ class StoriesController < ApplicationController
   end
 
   def update
-
   end
 
   def destroy
@@ -38,6 +43,6 @@ class StoriesController < ApplicationController
     end
 
     def set_story
-      @story = Story.find(:id)
+      @story = Story.find(params[:id])
     end
 end

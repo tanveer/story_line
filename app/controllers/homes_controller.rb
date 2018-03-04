@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
 
-  def home
+  def index
+    @stories = Story.all
   end
-
 end
